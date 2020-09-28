@@ -2,7 +2,6 @@ package com.example.spring.kafka.consumer.consumer.events;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
-import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
 import com.example.spring.kafka.consumer.consumer.service.ExampleService;
@@ -12,10 +11,7 @@ public class ExampleListener {
 
 	@Autowired
 	ExampleService exampleService;
-	
-	@Autowired
-	KafkaTemplate<String, Object> kafkaTemplate;
-	
+
 	public ExampleListener() {
 		super();
 	}
@@ -25,7 +21,7 @@ public class ExampleListener {
 		try {
 			exampleService.testName(message);
 		} catch (Exception e) {
-			System.out.println("Error. Reprocess? ...DLQ");
+			System.out.println("Error. " + e.getMessage());
 		}
 	}
 }
