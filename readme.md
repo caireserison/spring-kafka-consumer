@@ -7,8 +7,6 @@ PREPARAÇÃO DO AMBIENTE LOCAL
 
 2 - Imagem do Kafka no Docker https://docs.confluent.io/current/quickstart/ce-docker-quickstart.html
 
-O tópico é criado automaticamente pela aplicação
-
 
 OU
 
